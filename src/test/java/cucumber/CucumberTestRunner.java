@@ -9,6 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
     features = "src/test/java/cucumber",
     glue = "rahulshettyacademy.stepDefinitions",
+    tags = "@Regression",
     monochrome = true,
     plugin = {"html:target/cucumber.html"}
 )

@@ -7,27 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 
 import rahulshettyacademy.AbstractComponents.AbstractComponent;
 
-public class ConfirmationPage extends AbstractComponent{
+public class ConfirmationPage extends AbstractComponent {
 
-	
 	WebDriver driver;
 
 	public ConfirmationPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		
-
 	}
-	
+
 	@FindBy(css = ".hero-primary")
 	WebElement confirmationMessage;
-	
-	public String getConfirmationMessage()
-	{
-		CheckoutPage cp = new CheckoutPage(driver);	
+
+	public String getConfirmationMessage() {
+		waitForWebElementToAppear(confirmationMessage);
+		System.out.println("parvind" + confirmationMessage.getText());
 		return confirmationMessage.getText();
 	}
-	
-	
 }
